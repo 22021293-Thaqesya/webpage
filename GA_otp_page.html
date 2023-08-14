@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chashiko Bank</title>
+</head>
+<style>
+    body {
+        background-image: url("background.jpg");
+        margin: 0;
+    }
+    div {
+        background-color: rgb(178, 211, 244);
+        margin: auto;
+        text-align: center;
+        width: 400px;
+    }
+    .button{
+        background-color:pink;
+        border: none;
+        color: black;
+        padding: 15px 32px;
+        text-align: center;
+        
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        
+    }
+
+    img{
+        height: 200px;
+        width: 600px;
+    }
+
+    .previous {
+        background-color: #f1f1f1;
+        color: black;
+    }
+
+    footer {
+        background-color: rgb(213, 148, 220);
+        padding: 10px 0;
+        color: white;
+        text-align: center;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+    }
+
+    button{
+        background-color: pink;
+        color: black;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+</style>
+<body>
+    <h2> <center> OTP VERIFICATION </center></h2>
+    <br>
+    <div class = "verification">
+    <br>
+        <p>Generated OTP: <span id="generatedOTP"></span></p> <!-- contains label and empty span element where generated
+                                                                otp will be displayed -->
+        <p>Enter OTP: <input type="text" id="inputOTP"></p> <!-- users can enter otp here -->
+        <button id="generateButton">Generate OTP</button>
+        <button id="verifyButton">Verify OTP</button>
+    <br>
+    <br>
+    <a href="GA_login.html" class="previous">&laquo; Previous</a>
+</div>
+<br>
+    <center><img src="otp.jpg" alt="otp image"></center>
+
+    <script>
+        const generateButton = document.getElementById('generateButton'); // retrives button element with button ID generateButton
+                                                                        // and stores it in generateButton variable
+        const verifyButton = document.getElementById('verifyButton');
+        const generatedOTPSpan = document.getElementById('generatedOTP');
+        const inputOTP = document.getElementById('inputOTP');
+
+        generateButton.addEventListener('click', () => { // when button is clicked, provided arrow function will be executed
+            const newOTP = Math.floor(Math.random() * 1000000).toString().padStart(6, '0'); // generate random number between 0 and 999999
+                                                                                            // converting it to a string, and padding it to 6 digits with leading zeros if needed
+            generatedOTPSpan.textContent = newOTP; // sets text of content of generateOTPSpan to newly generated OTP
+        });
+
+        verifyButton.addEventListener('click', () => { // adds a click event listener to verifyButton
+            const generatedOTP = generatedOTPSpan.textContent; // retrieves text of content of generateOTPSpan which is OTP displayed
+            const enteredOTP = inputOTP.value; // retrieved value input but user
+
+            if (generatedOTP === enteredOTP) {
+                alert('OTP is valid! Redirecting to next page...');
+                window.location.href = 'GA_description.html'; // Change this to the URL of the other page
+            } else {
+                alert('Invalid OTP!');
+            }
+        });
+    </script>
+</body>
+
+
+    <footer>
+        &copy; 2023 Chashiko Bank. All rights reserved.
+    </footer>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chashiko Bank</title>
+</head>
+
+<style>
+    body{
+        background-image: url("background.jpg");
+        margin: 0;
+    }
+
+    div {
+        background-color: rgb(178, 211, 244);
+        margin: auto;
+        text-align: center;
+        width: 500px;
+    }
+
+    img{
+        width: 400px;
+        height: 200px;
+    }
+
+    .previous {
+        background-color: #f1f1f1;
+        color: black;
+    }
+
+    button {
+            background-color: pink;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+    }
+
+    footer {
+        background-color: rgb(213, 148, 220);
+        padding: 10px 0;
+        color: white;
+        text-align: center;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+    }
+</style>
+<body>
+    <header>
+        <h2> <center> MAKE OVERSEAS TRANSFER </center></h2>
+    </header>
+
+    <div class = "transfer details">
+        <br>
+        <label for="location">Select location:</label>
+        <select name="Location" id="location" required> 
+            <option value="malaysia">Malaysia</option> 
+            <option value="indonesia">Indonesia</option>
+            <option value="thailand">Thailand</option>
+            <option value="australia">Australia</option>
+            <option value="china">China</option>
+        </select>
+        <br>
+        <br>
+        <label for="currency">Select currency:</label>
+        <select name="Currency" id="currency" required> 
+            <option value="malaysia">MYR</option> 
+            <option value="indonesia">IDR</option>
+            <option value="thailand">Bhat</option>
+            <option value="australia">AUD</option>
+            <option value="china">CNY</option>
+        </select>
+        <br>
+        <br>
+        <label for="bank">Select bank:</label>
+        <select name="Bank" id="bank" required> 
+            <option value="malaysia">MayBank</option> 
+            <option value="indonesia">Bank Rakyat Indonesia</option>
+            <option value="thailand">Bangkok Bank</option>
+            <option value="australia">National Australia Banks</option>
+            <option value="china">Bank of China</option>
+        </select>
+        <br>
+        <br>   
+        <button onclick="window.location.href = 'GA_confirmoverseas.html';">make a payment</button>
+        <br>
+        <br>
+        <a href="GA_description.html" class="previous">&laquo; Previous</a> 
+        </div>
+    </div>
+    <br>
+    <center><img src="overseas.jpg" alt="making transfers"></center>
+    
+
+    <footer>
+        &copy; 2023 Chashiko Bank. All rights reserved.
+    </footer>
+</body>
+</html>

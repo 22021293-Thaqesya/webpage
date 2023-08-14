@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chashiko Bank</title>
+</head>
+<style>
+    body {
+        background-image: url("background.jpg");
+        margin: 0;
+        overflow: hidden
+    }
+
+    nav {
+        background-color: rgb(213, 148, 220);
+        padding: 10px;
+        margin-bottom: 20px;
+    }
+
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        overflow: hidden;
+        justify-content: center;
+    }
+
+    li {
+        display: inline;
+        float: left;
+    }
+
+    li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+
+    .flex-container {
+        display: flex;
+        background-color: rgb(178, 211, 244);
+        height: 300px;
+        width: 1500px;
+        justify-content: center;
+    }
+
+    .flex-container>div {
+        background-color: white;
+        margin: 15px;
+        padding: 10px;
+        font-size: 20px;
+        height: 250px;
+        width: 350px;
+        text-align: center;
+    }
+
+    footer {
+        background-color: rgb(213, 148, 220);
+        padding: 10px 0;
+        color: white;
+        text-align: center;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+    }
+</style>
+
+<body>
+    <header>
+        <h2>
+            <center> SERVICE DESCRIPTION </center>
+        </h2>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="GA_homepage.html">Home</a></li>
+            <li><a href="GA_overseastransfer.html">Overseas Transfer</a></li>
+            <li><a href="GA_billspayment.html">Bills Payment</a></li>
+            <li><a href="GA_localtransfer.html">Local Transfer</a></li>
+            <li><a href="GA_contactus.html"> Contact Us </a></li>
+
+
+        </ul>
+    </nav>
+
+    <div class="flex-container">
+        <div>
+
+            <body>
+                <h3>
+                    <center> OVERSEAS TRANSFER </center>
+                </h3>
+                <br>
+                <center> transfer any amount to people living outside of Singapore </center>
+                <br>
+                <button onclick="window.location.href = 'GA_overseastransfer.html';">proceed</button>
+            </body>
+        </div>
+
+        <div>
+
+            <body>
+                <h3>
+                    <center> BILLS PAYMENT </center>
+                </h3>
+                <br>
+                <center> pay for any of your bills online </center>
+                <br>
+                <button onclick="window.location.href = 'GA_billspayment.html';">proceed</button>
+            </body>
+        </div>
+
+        <div>
+
+            <body>
+                <h3>
+                    <center> LOCAL TRANSFER </center>
+                </h3>
+                <br>
+                <center> transfer any amount to people living in Singapore </center>
+                <br>
+                <button onclick="window.location.href = 'GA_localtransfer.html';">proceed</button>
+            </body>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2023 Chashiko Bank. All rights reserved.
+    </footer>
+
+</body>
+
+</html>

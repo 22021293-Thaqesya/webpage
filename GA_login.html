@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chashiko Bank</title>
+</head>
+<style>
+    body {
+        background-image: url("background.jpg");
+        margin: 0;
+    }
+    img {
+        width: 300px;
+        height: 100px;
+    }
+    div {
+        background-color: rgb(178, 211, 244);
+        margin: auto;
+        text-align: center;
+        width: 500px;
+    }
+
+    #loginButton {
+            background-color: pink;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+    }
+
+    .previous {
+        background-color: #f1f1f1;
+        color: black;
+    }
+
+    footer {
+        background-color: rgb(213, 148, 220);
+        padding: 10px 0;
+        color: white;
+        text-align: center;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+    }
+</style>
+<body>
+    <h2> <center> LOGIN TO YOUR ACCOUNT </center></h2>
+    <br>
+    <div class="login details">
+        <br>
+        <div class="box">
+            <p>Username: <input type="text" id="usernameInput" onkeyup="enableButton()"></p>
+        </div>
+        <div class="box">
+            <p>Password: <input type="password" id="passwordInput" onkeyup="enableButton()"></p>
+        </div>
+        <button id="loginButton" disabled onclick="showAlert()">login!</button>
+        <br>
+        <br>
+        <a href="https://www.singpass.gov.sg/home/ui/login"><img src="singpass.png"></a>
+        <br> 
+        click <a href='GA_createacc.html'>here</a> to sign up for an account!
+        <br>
+        <a href='GA_forgotpass.html'> forgot password?</a> 
+        <br>
+        <br>
+        <a href="GA_homepage.html" class="previous">&laquo; Previous</a>
+    </div>
+
+    <script>
+        function enableButton() {
+            var usernameInput = document.getElementById('usernameInput');
+            var passwordInput = document.getElementById('passwordInput');
+            var loginButton = document.getElementById('loginButton');
+            
+            // Enable the button only if both username and password are not empty
+            loginButton.disabled = usernameInput.value.trim() === '' || passwordInput.value.trim() === '';
+        }
+
+        function showAlert() {
+            var usernameInput = document.getElementById('usernameInput');
+            
+            // Show alert only if there's a username entered
+            if (usernameInput.value.trim() !== '') {
+                alert("Login attempt of more than 3 times will lead to your account being temporarily suspended.");
+                window.location.href = "GA_otp_page.html";
+            }
+        }
+    </script>
+
+    <footer>
+        &copy; 2023 Chashiko Bank. All rights reserved.
+    </footer>
+</body>
+</html>

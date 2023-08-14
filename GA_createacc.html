@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chashiko Bank</title>
+</head>
+<style>
+    body {
+        background-image: url("background.jpg");
+        margin: 0;
+    }
+    div {
+        background-color: rgb(178, 211, 244);
+        margin: auto;
+        text-align: center;
+        width: 500px;
+    }
+    img {
+        width: 300px;
+        height: 100px;
+        display: block;
+        margin: 0 auto;
+    }
+
+    #createButton {
+            background-color: pink;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+    }
+
+    .previous {
+        background-color: #f1f1f1;
+        color: black;
+    }
+
+    footer {
+        background-color: rgb(213, 148, 220);
+        padding: 10px 0;
+        color: white;
+        text-align: center;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+    }
+</style>
+<body>
+    <h2> <center> DON'T HAVE AN ACCOUNT? SIGN UP HERE! </center></h2>
+    <br>
+    <div class = "create account" >
+        <br>
+        <div class="box">
+            <p>Enter a username: <input type="text" id="usernameInput" onkeyup="enableButton()"></p>
+        </div>
+        <div class="box">
+            <p>Enter a password: <input type="text" id="passwordInput" onkeyup="enableButton()"></p>
+        </div>
+        <div class="box">
+            <p>Enter password again: <input type="text" id="confirmInput" onkeyup="enableButton()"></p>
+        </div>
+        <div class="box">
+            <p>Enter mobile phone number: <input type="text" id="phonenumberInput" onkeyup="enableButton()"></p>
+        </div>
+        <div class="box">
+            <p>Enter email: <input type="text" id="emailInput" onkeyup="enableButton()"></p>
+        </div>
+        <button id="createButton" disabled onclick="showAlert()">create account!</button>
+        <br>
+        <br>
+        <a href="https://www.singpass.gov.sg/home/ui/login"><img src="singpass.png"></a>
+        click image above if you wish to link your account using singpass
+        <br>
+        <br>
+        <a href="GA_login.html" class="previous">&laquo; Previous</a>
+    </div>
+
+    <script>
+        function enableButton() {
+            var usernameInput = document.getElementById('usernameInput');
+            var passwordInput = document.getElementById('passwordInput');
+            var passwordInput = document.getElementById('confirmInput');
+            var passwordInput = document.getElementById('phonenumberInput');
+            var passwordInput = document.getElementById('emailInput');
+            var loginButton = document.getElementById('createButton');
+            
+            // Enable the button only if both username and password are not empty
+            loginButton.disabled = usernameInput.value.trim() === '' || passwordInput.value.trim() === '';
+        }
+
+        function showAlert() {
+            var usernameInput = document.getElementById('usernameInput');
+            
+            // Show alert only if there's a username entered
+            if (usernameInput.value.trim() !== '') {
+                window.location.href = "GA_login.html";
+            }
+        }
+    </script>
+
+<footer>
+    &copy; 2023 Chashiko Bank. All rights reserved.
+</footer> 
+
+    
+    
+</body>
+</html>

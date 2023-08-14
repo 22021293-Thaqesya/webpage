@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chashiko Bank</title>
+</head>
+
+<style>
+    body{
+        background-image: url("background.jpg");
+        margin: 0;
+    }
+
+    div {
+        background-color: rgb(178, 211, 244);
+        margin: auto;
+        text-align: center;
+        width: 500px;
+    }
+
+    button {
+            background-color: pink;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            
+    }
+
+    .info {
+      width: 100px;
+      height: 50px;
+      background-color: #f0f0f0;
+      border: 1px solid #ccc;
+      margin: 20px;
+      padding: 10px;
+      box-sizing: border-box;
+    }
+
+    .info-container{
+      display: flex; /* Use flex display to make the info divs appear side by side */
+      align-items: center;
+      justify-content: center;
+
+    }
+
+    .previous {
+        background-color: #f1f1f1;
+        color: black;
+    }
+
+
+    footer {
+        background-color: rgb(213, 148, 220);
+        padding: 10px 0;
+        color: white;
+        text-align: center;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+    }
+</style>
+<body>
+    <header>
+        <h2> <center> CONFIRM RECIPIENT'S DETAILS</center></h2>
+    </header>
+
+    <div class = "details">
+        <br>
+        <div class="box">
+            <p>Enter account number of recipient: <input type="text" id="accountInput" placeholder = "**** **** **** ****" onkeyup="enableButton()"></p>
+        </div>
+        <br>
+        <div class="box">
+            <p>Recipient's full name: <input type="text" id="nameInput" placeholder = "THAQESYA ARDINI" onkeyup="enableButton()"></p>
+        </div>
+        <br>
+        <div class="box">
+            <p>Recipient's address: <input type="text" id="addressInput" placeholder = "123 Main St, City, State, Postal" onkeyup="enableButton()"></p>
+        </div>
+        <br>
+        <div class="box">
+            <p>Enter amount to transfer (SGD): <input type="text" id="amountInput" placeholder = "100 SGD" onkeyup="enableButton()"></p>
+        </div>
+        <br>
+        <div class = "info-container">
+            <div class="info"> No-fee </div> 
+            <div class="info"> Same day transfer</div>
+        </div>
+        
+        <button id="confirmButton" disabled onclick="showAlert()">confirm transfer!</button>
+        <br>
+        <br>
+        <a href="GA_overseastransfer.html" class="previous">&laquo; Previous</a> 
+    </div>
+
+    <script>
+        function enableButton() {
+            var accountInput = document.getElementById('accountInput');
+            var nameInput = document.getElementById('nameInput');
+            var addressInput = document.getElementById('addressInput');
+            var amountInput = document.getElementById('amountInput');
+            var confirmButton = document.getElementById('confirmButton');
+            
+            // Enable the button only if both username and password are not empty
+            confirmButton.disabled = accountInput.value.trim() === '' || nameInput.value.trim() === '' 
+            || addressInput.value.trim() === '' || amountInput.value.trim() === '';
+        }
+
+        function showAlert() {
+            var accountInput = document.getElementById('accountInput');
+            
+            // Show alert only if there's a username entered
+            if (accountInput.value.trim() !== '') {
+                alert("100 SGD = 339.25 MYR\n Transaction of 339.25 MYR is still pending. Once transaction is successful, a confirmation message will be sent to your number");
+                window.location.href = "GA_description.html";
+            }
+        }
+    </script>
+    
+</body>
+
+<footer>
+    &copy; 2023 Chashiko Bank. All rights reserved.
+</footer>
+</html>

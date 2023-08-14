@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+     body {
+        background-image: url("background.jpg");
+        margin: 0;
+    }
+
+    div {
+        background-color: rgb(178, 211, 244);
+        margin: auto;
+        text-align: center;
+        width: 500px;
+    }
+
+    #resetButton {
+            background-color: pink;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+    }
+
+    .previous {
+        background-color: #f1f1f1;
+        color: black;
+    }
+
+    footer {
+        background-color: rgb(213, 148, 220);
+        padding: 10px 0;
+        color: white;
+        text-align: center;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+    }
+</style>
+<body>
+    <header>
+        <h2> <center> RESET YOUR PASSWORD HERE</center></h2>
+    </header>
+    <br>
+    <div class="account details">
+        <br>
+        <div class="box">
+            <p>Enter your username: <input type="text" id="usernameInput" onkeyup="enableButton()"></p>
+        </div>
+        <br>
+        <div class="box">
+            <p>Set a new password: <input type="text" id="passwordInput" onkeyup="enableButton()"></p>
+        </div>
+        <br>
+        <div class="box">
+            <p>Enter password again: <input type="text" id="confirmInput" onkeyup="enableButton()"></p>
+        </div>
+        <br>
+        <button id="resetButton" disabled onclick="showAlert()">reset password!</button>
+        <br>
+        <br>
+        <a href="GA_login.html" class="previous">&laquo; Previous</a>
+    </div>
+
+    <script>
+        function enableButton() {
+            var usernameInput = document.getElementById('usernameInput');
+            var passwordInput = document.getElementById('passwordInput');
+            var confirmInput = document.getElementById('confirmInput');
+            var resetButton = document.getElementById('resetButton');
+            
+            // Enable the button only if both username and password are not empty
+            resetButton.disabled = usernameInput.value.trim() === '' || passwordInput.value.trim() === '';
+        }
+
+        function showAlert() {
+            var usernameInput = document.getElementById('usernameInput');
+            
+            // Show alert only if there's a username entered
+            if (usernameInput.value.trim() !== '') {
+                alert("Your password has been reset. You can login to your account now.");
+                window.location.href = "GA_login.html";
+            }
+        }
+    </script>
+
+    <footer>
+        &copy; 2023 Chashiko Bank. All rights reserved.
+    </footer>
+        
+    
+    
+</body>
+</html>

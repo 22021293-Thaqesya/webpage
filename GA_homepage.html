@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title> Chashiko Bank </title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chashiko Bank</title>
+</head>
+
+<style>
+    body {
+        background-image: url("background.jpg");
+        margin: 0;
+        overflow: hidden
+    }
+    h1{
+        font-family:Arial, Helvetica, sans-serif;
+        height: 40px;
+        width: 600px;
+        border-width: 1px;
+        border-color: black;
+        border-style: solid;
+        padding: 10px;
+        margin: auto;
+    }
+
+    footer {
+        background-color: rgb(213, 148, 220);
+        padding: 10px 0;
+        color: white;
+        text-align: center;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+    }
+</style>
+<body> 
+    <header>
+        <h1><center>WELCOME TO CHASHIKO BANK!</center></h1>
+        <p><center> where you can make payment service anywhere and anytime </center></p> 
+    </header>
+    <br>
+    <p> click on the service you wish to proceed with</p>
+    <!--<div class = "box 1">
+        <style>
+            div{
+                background-color: white;
+                height: 200px;
+                width: 200px;
+                border-width: 1px;
+                border-color: black;
+                border-style: solid;
+            }
+        </style>
+        <body>
+        <h3> E-PAYMENT </h3> <br>
+        <center>allows you to purchase any types of goods and make payment without the use of cash</center>
+        </body>
+    </div>
+
+    <div class = "box 2">
+        <body>
+            <h3> E-TRANSFER </h3> <br>
+            <center>allows you to transfer money to anyone you want </center>
+        </body>
+    </div> -->
+    <br>
+    <div class="flex-container">
+        <div>
+            <style>
+                .flex-container {
+                    display: flex;
+                    background-color: rgb(178, 211, 244);
+                    height: 300px;
+                    width: 1500px;
+                    justify-content: center;
+                }
+
+                .flex-container > div {
+                    background-color: white;
+                    margin: 15px;
+                    padding: 10px;
+                    font-size: 20px;
+                    height: 250px;
+                    width: 350px;
+                    text-align: center;
+                }
+            </style>
+            <body>
+            <h3> E-PAYMENT </h3> <br>
+            <center>allows you to purchase any types of goods and make payment without the use of cash</center>
+            <br>
+            <button onclick="window.location.href = 'GA_login.html';">proceed</button>
+            </body>
+        </div>
+        <div>
+            <body>
+                <h3> E-TRANSFER </h3> <br>
+                <center>allows you to transfer money to anyone you want </center>
+                <br>
+                <button onclick="window.location.href = 'GA_login.html';">proceed</button>
+            </body>
+        </div>
+      </div>
+
+      <footer>
+        &copy; 2023 Chashiko Bank. All rights reserved.
+      </footer>
+</body>
+</html>

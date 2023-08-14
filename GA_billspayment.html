@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        background-image: url("background.jpg");
+        margin: 0;
+    }
+
+    div {
+        background-color: rgb(178, 211, 244);
+        margin: auto;
+        text-align: center;
+        width: 500px;
+    }
+
+    img {
+        height: 150px;
+        width: 150px;
+    }
+
+    button {
+            background-color: pink;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+    }
+
+    .previous {
+        background-color: #f1f1f1;
+        color: black;
+    }
+
+    footer {
+        background-color: rgb(213, 148, 220);
+        padding: 10px 0;
+        color: white;
+        text-align: center;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+    }
+        
+</style>
+<body>
+    <header>
+        <h2> <center> MAKE PAYMENT FOR YOUR BILLS HERE </center></h2>
+    </header>
+
+    <div class = "billing details" >
+        <br>
+        <label for="organisation">Select billing organisation:</label>
+        <select name="Organisation" id="organisation" required> 
+            <option value="towncouncil">Town Council</option> 
+            <option value="singtel">Singtel</option>
+            <option value="carloan">DBS Car Loans</option>
+            <option value="houseloan">HDB Housing Loan Installment</option>
+            <option value="nuh">National University Hospital</option>
+        </select>
+        <br>
+        <div class="box">
+            <p>Enter reference no. (to see amount needed to pay): <input type="text"></p>
+        </div>
+        <br>
+        <button onclick="window.location.href = 'GA_bill_card.html';">make a payment</button>
+        <br>
+        <br>
+        <img src="towncouncil.jpg" alt="town council logo">
+        <img src="dbs.jpg" alt="dbs logo">
+        <img src="singtel.jpg" alt="singtel logo">
+        <br>
+        <br>
+        <a href="GA_description.html" class="previous">&laquo; Previous</a>
+    </div>
+
+    <footer>
+        &copy; 2023 Chashiko Bank. All rights reserved.
+    </footer>
+    
+    
+</body>
+</html>

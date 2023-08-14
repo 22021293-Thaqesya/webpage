@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        background-image: url("background.jpg");
+        margin: 0;
+    }
+    div {
+        background-color: rgb(178, 211, 244);
+        margin: auto;
+        text-align: center;
+        width: 500px;
+    }
+
+    button {
+            background-color: pink;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            
+    }
+
+    img {
+        width: 300px;
+        height: 150px;
+    }
+    .previous {
+        background-color: #f1f1f1;
+        color: black;
+    }
+
+    footer {
+        background-color: rgb(213, 148, 220);
+        padding: 10px 0;
+        color: white;
+        text-align: center;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+    }
+</style>
+
+<body>
+    <header>
+        <h2> <center> ENTER CARD DETAILS HERE</center> </h2>
+    </header>
+
+    <div class = "card details">
+        <br>
+        <div class="box">
+            <p>Name on card: <input type="text" id="nameInput" placeholder = "THAQESYA ARDINI" onkeyup="enableButton()"></p>
+        </div>
+        <br>
+        <div class="box">
+            <p>Card Number: <input type="text" id="cardnumInput" placeholder = " **** **** **** ****" onkeyup="enableButton()"></p>
+        </div>
+        <br>
+        <div class="box">
+            <p>Expiry Date: <input type="text" id="expiryInput" placeholder = "MM/YY" onkeyup="enableButton()"></p>
+        </div>
+        <br>
+        <div class="box">
+            <p>CVC: <input type="text" id="cvcInput" placeholder = "123" onkeyup="enableButton()"></p>
+        </div>
+        <br>
+        <button id="payButton" disabled onclick="showAlert()">confirm payment!</button>
+        <br>
+        <br>
+        <img src="cardoptions.jpg" alt="card options">
+        <br>
+        <a href="GA_billspayment.html" class="previous">&laquo; Previous</a>
+        </div>
+
+        <script>
+            function enableButton() {
+                var nameInput = document.getElementById('nameInput');
+                var cardnumInput = document.getElementById('cardnumInput');
+                var expiryInput = document.getElementById('expiryInput');
+                var cvcInput = document.getElementById('cvcInput');
+                var payButton = document.getElementById('payButton');
+                
+                // Enable the button only if both username and password are not empty
+                payButton.disabled = nameInput.value.trim() === '' || cardnumInput.value.trim() === '' 
+                || expiryInput.value.trim() === '' || cvcInput.value.trim() === '';
+            }
+    
+            function showAlert() {
+                var usernameInput = document.getElementById('usernameInput');
+                
+                // Show alert only if there's a username entered
+                if (nameInput.value.trim() !== '') {
+                    alert("Payment has been made. Confirmation message will be sent to your number.");
+                    window.location.href = "GA_description.html";
+                }
+            }
+        </script>
+
+<footer>
+    &copy; 2023 Chashiko Bank. All rights reserved.
+</footer>
+
+    
+</body>
+</html>

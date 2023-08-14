@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    body{
+        background-image: url("background.jpg");
+        margin: 0;
+    }
+
+    div {
+        background-color: rgb(178, 211, 244);
+        margin: auto;
+        text-align: center;
+        width: 500px;
+    }
+
+    footer {
+        background-color: rgb(213, 148, 220);
+        padding: 10px 0;
+        color: white;
+        text-align: center;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+    }
+</style>
+<body>
+    <header>
+        <h2> <center> CONTACT US </center></h2>
+    </header>
+
+    <div class = "contact">
+        <br>
+        Contact us at +65 9273 7392 
+        <br>
+        <div class="box">
+            <p>Full Name: <input type="text" id="nameInput" placeholder = "NUR THAQESYA ARDINI" onkeyup="enableButton()"></p>
+        </div>
+        <div class="box">
+            <p>Email*: <input type="text" id="emailInput" placeholder = "thaq123@gmail.com" onkeyup="enableButton()"></p>
+        </div>
+        <div class="box">
+            <p>What can we help you with?: <input type="text" id="helpInput" onkeyup="enableButton()"
+            style="width: 250px; height: 40px;"></p>
+        </div>
+
+    </div>
+    
+</body>
+
+<footer>
+    &copy; 2023 Chashiko Bank. All rights reserved.
+</footer>
+
+</html>

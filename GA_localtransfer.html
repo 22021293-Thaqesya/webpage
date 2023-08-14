@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chashiko Bank</title>
+</head>
+<style>
+    body {
+        background-image: url("background.jpg");
+        margin: 0;
+    }
+    div {
+        background-color: rgb(178, 211, 244);
+        margin: auto;
+        text-align: center;
+        width: 500px;
+    }
+
+    .previous {
+        background-color: #f1f1f1;
+        color: black;
+    }
+
+    footer {
+        background-color: rgb(213, 148, 220);
+        padding: 10px 0;
+        color: white;
+        text-align: center;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+    }
+
+    img{
+        width: 400px;
+        height: 200px;
+    }
+
+    button {
+            background-color: pink;
+            color: black;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+    }
+</style>
+<body>
+    <header>
+        <h2> <center> MAKE LOCAL TRANSFERS HERE </center></h2>
+    </header>
+    <br>
+    <div class="transfer options">
+        <br>
+        <button onclick="window.location.href = 'GA_tscmobile.html';"> transfer to mobile </button>
+        <br>
+        <br>
+        <button onclick="window.location.href = 'GA_tscbankacc.html';"> transfer to bank account </button>
+        <br>
+        <br>
+        <button onclick="window.location.href = 'GA_tscnric.html';"> transfer to NRIC </button>
+        <br>
+        <br>
+        <a href="GA_description.html" class="previous">&laquo; Previous</a>
+        <br>
+        <br>
+        
+        
+    </div>
+    <br>
+    <br>
+
+    <center><img src="transfer.jpg" alt="making transfers"></center>
+
+    <footer>
+        &copy; 2023 Chashiko Bank. All rights reserved.
+    </footer>
+    
+</body>
+</html>

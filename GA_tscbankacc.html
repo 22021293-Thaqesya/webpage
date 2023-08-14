@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Chashiko Bank</title>
+</head>
+<style>
+    body {
+        background-image: url("background.jpg");
+        margin: 0;
+    }
+    div {
+        background-color: rgb(178, 211, 244);
+        margin: auto;
+        text-align: center;
+        width: 500px;
+    }
+    .btn {
+        background-color: DodgerBlue;
+        border: none;
+        color: white;
+        padding: 12px 16px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+    /* Darker background on mouse-over */
+    .btn:hover {
+        background-color: RoyalBlue;
+    }
+
+    #confirmButton {
+            background-color: pink;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+    }
+
+    footer {
+        background-color: rgb(213, 148, 220);
+        padding: 10px 0;
+        color: white;
+        text-align: center;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+    }
+
+    .previous {
+        background-color: #f1f1f1;
+        color: black;
+    }
+</style>
+<body>
+    <h2> <center> confirm details </center></h2>
+    <div class = "transfer details" >
+        <br>
+        <div class="box">
+            <p>Enter bank account of recipient: <input type="text" id="accountInput" onkeyup="enableButton()"></p>
+        </div>
+        <div class = "amount transferred" >
+            <br>
+            <div class="box">
+                <p>Enter amount to transfer: <input type="text" id="amountInput" onkeyup="enableButton()"></p>
+            </div>
+            <br>
+            <button id="confirmButton" disabled onclick="showAlert()">confirm transaction!</button>
+            <br>
+            <br>
+            <center> 
+                <a href="GA_homepage.html" ><button class="btn"><i class="fa fa-home"></i> Home</button></a> 
+                <a href="GA_description.html" ><button class="btn"><i class="fa fa-bars"></i> Menu</button></a>
+                <br>
+                <br>
+            </center>
+            <a href="GA_localtransfer.html" class="previous">&laquo; Previous</a>
+        </div>
+    </div>
+</body>
+
+<script>
+    function enableButton() {
+        var accountInput = document.getElementById('accountInput');
+        var amountInput = document.getElementById('amountInput');
+        var confirmButton = document.getElementById('confirmButton');
+        
+        // Enable the button only if both NRIC and amount are not empty and amount is less than $1000
+        var amount = parseFloat(amountInput.value.trim());
+        confirmButton.disabled = accountInput.value.trim() === '' || isNaN(amount);
+    }
+
+    function showAlert() {
+    var accountInput = document.getElementById('accountInput');
+    var amountInput = document.getElementById('amountInput');
+    
+    var amount = parseFloat(amountInput.value.trim());
+    
+    // Show alert only if there's a valid NRIC and the amount is within the allowed range
+    if (accountInput.value.trim() !== '' && !isNaN(amount) && amount > 0) {
+        if (amount > 1000) {
+            alert("To prevent money laundering, we have set the limit to $1000.");
+            window.location.href = "GA_tscnric.html";
+        } else {
+            alert("Your transaction has been confirmed. You will get a confirmation message sent to your mobile");
+            window.location.href = "GA_description.html";
+        }
+    }
+}
+
+</script>
+
+
+<footer>
+    &copy; 2023 Chashiko Bank. All rights reserved.
+</footer> 
+</html>
